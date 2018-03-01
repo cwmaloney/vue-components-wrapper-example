@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Vue.js Components Wrapper Example</title>
+		<script src="https://unpkg.com/vue"></script>
+		<script src="dist/hello-components.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<h1 class="title">Vue.js Components Wrapper Example</h1>
+			<hello-component name="World"></hello-component>
+			<hello2-component name="Everyone"></hello2-component>
+		</div>
+
+		<script>
+		var app = new Vue({
+			el : '#app'
+		});
+		</script>
+
+	</body>
+
+</html>
