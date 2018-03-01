@@ -1,4 +1,4 @@
-# Vue.js Components Packager
+# Vue.js Components Wrapper Example
 
 This project is a simple example of creating packaging Vue.js components for use in any HTML.
 
