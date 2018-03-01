@@ -19,5 +19,6 @@ register the Vue.js componenets
 
 ## Open the demo page
 
-The index.html page uses the components.
+The index.html page uses the two sample components by referenceing the JavaScript file that wraps the Vue.js components created by the build step and stored in the dist folder.  You can open the page in a browswer after you have completed the build step.
+
 
