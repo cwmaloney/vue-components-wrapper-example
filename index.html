@@ -15,10 +15,11 @@
 			<h1 class="title">Vue.js Components Wrapper Example</h1>
 			<hello-component name="World"></hello-component>
 			<hello2-component name="Everyone"></hello2-component>
+      <simple-counter v-bind:initial-counter-value="0"></simple-counter>
 		</div>
 
 		<script>
-		var app = new Vue({
+		new Vue({
 			el : '#app'
 		});
 		</script>
