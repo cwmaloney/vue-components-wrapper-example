@@ -1,22 +1,29 @@
 <template>
-  <div class="simple-counter">
-    <button v-on:click="decrement"> - </button>
-    {{counter}}
-    <button v-on:click="increment"> + </button>
+  <div class="simple-contact">
+    <form>
+      <div>
+        <label for="name">Name:</label>
+        <input id="name" v-model="contact.name" type="text"/>
+       </div>
+      <div>
+        <label for="phone">Phone:</label>
+        <input id="phone" v-model="contact.phone" type="text"/>
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'simple-counter',
+    name: 'simple-contact',
 
     props: {
-      'initialValue': {type: Number, required: true}
+      initialContact: {type: Object, required: true}
     },
 
     data() {
       return {
-        counter: this.initialValue
+        contact: JSON.parse(JSON.stringify(this.initialContact))
       };
     },
 
@@ -34,8 +41,8 @@
 </script>
 
 <style lang="css" scoped>
-  .simple-counter {
-    background-color: lightgray;
+  .simple-contact {
+    background-color: lightblue;
     border: solid navy;
     padding: 4px;
     display: inline-block;
