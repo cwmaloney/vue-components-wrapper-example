@@ -46,6 +46,7 @@
     border: solid navy;
     padding: 4px;
     display: inline-block;
+    margin: 5px 2px;
   }
   button {
     color: blue;
