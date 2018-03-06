@@ -9,6 +9,14 @@
         <label for="phone">Phone:</label>
         <input id="phone" v-model="contact.phone" type="text"/>
       </div>
+      <div>
+        <button id="updateButton" type="button" v-on:click="onUpdateClicked">
+          Update
+        </button>
+        <button id="cancelButton" type="button" v-on:click="onCancelClicked">
+          Cancel
+        </button>
+      </div>
     </form>
   </div>
 </template>
@@ -25,6 +33,14 @@
       return {
         contact: JSON.parse(JSON.stringify(this.initialContact))
       };
+    },
+    methods: {
+      onUpdateClicked: function() {
+        this.$emit('contact-updated', this.contact);
+      },
+      onCancelClicked: function() {
+        this.$emit('cancel');
+      }
     }
   };
 </script>

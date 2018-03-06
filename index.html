@@ -25,18 +25,29 @@
 
       <br>
 
-      <simple-contact v-bind:initial-contact="{name: 'Mike', phone: '555-1212'}"></simple-contact>
+      <simple-contact
+        v-bind:initial-contact="initialContact"
+        v-on:contact-updated="onContactUpdated"
+        v-on:cancel="onContactCancel">
+      </simple-contact>
 		</div>
 
 		<script>
 		new Vue({
 			el : '#app',
       data: {
-        initialCount: 10
+        initialCount: 10,
+        initialContact: { name: 'Mike', phone: '555-1212' }
       },
       methods: {
         onCountUpdated: function(newCount) {
           console.log("onCountUpdated count=" + newCount);
+        },
+        onContactUpdated: function(newContact) {
+          console.log("onContactUpdated contact=" + JSON.stringify(newContact));
+        },
+        onContactCancel: function() {
+          console.log("onContactCancel");
         }
       }
 		});
