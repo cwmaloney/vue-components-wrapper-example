@@ -1,0 +1,13 @@
+{
+  "presets": [
+    ["env", { "modules": false }]
+  ],
+  "plugins": ["transform-object-rest-spread", "transform-runtime"],
+  "comments": false,
+  "env": {
+    "test": {
+      "presets": ["env" ],
+      "plugins": [ "transform-object-rest-spread",  "istanbul" ]
+    }
+  }
+}
