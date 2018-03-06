@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Angular App Using Vue.js Component</title>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script data-require="angularjs@1.5.8" data-semver="1.5.8"
+          src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js"></script>
+  <script src="dist/sampleComponents.js"></script>
+  <script src="dist/sampleComponentsAngular.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    <h1 class="title">Angular App Using Vue.js Component</h1>
+    <hello-component name="World"></hello-component>
+    <hello2-component name="Everyone"></hello2-component>
+  </div>
+
+  <div id="angularApp">
+    <simple-counter-wrapper initialw="10000"></simple-counter-wrapper>
+  </div>
+
+  <script>
+
+    // Start our application with the module
+    angular.bootstrap(document.body, ['componentWrappers']);
+
+    // Start Vue for the "only" Vue part
+    new Vue({
+      el : '#app'
+    });
+  </script>
+
+</body>

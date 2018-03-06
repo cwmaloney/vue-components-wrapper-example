@@ -1,7 +1,7 @@
 <template>
   <div class="simple-counter">
     <button v-on:click="decrement"> - </button>
-    {{counter}}
+    <input type="number" v-model.number="counterValue" v-on:input="update" />
     <button v-on:click="increment"> + </button>
   </div>
 </template>
@@ -11,23 +11,26 @@
     name: 'simple-counter',
 
     props: {
-      'initialValue': {type: Number, required: true}
+      initial: {type: Number, required: true}
     },
 
     data() {
       return {
-        counter: this.initialValue
+        counterValue: this.initial
       };
     },
 
     methods: {
       increment: function () {
-        this.counter += 1;
-        this.$emit('update', this.counter);
+        this.counterValue += 1;
+        this.$emit('count-updated', this.counterValue);
       },
       decrement: function () {
-        this.counter -= 1;
-        this.$emit('update', this.counter);
+        this.counterValue -= 1;
+        this.$emit('count-updated', this.counterValue);
+      },
+      update: function() {
+        this.$emit('count-updated', this.counterValue);
       }
     }
   };

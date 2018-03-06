@@ -1,11 +1,10 @@
 
-const path                = require('path');
-const webpack             = require('webpack');
+const path                = require('path')
 
 // Webpack plugins
 const ExtractTextPlugin   = require('extract-text-webpack-plugin');
 const OptimizeCSSPlugin   = require('optimize-css-assets-webpack-plugin');
-const StringReplacePlugin = require("string-replace-webpack-plugin");
+const CopyWebpackPlugin   = require('copy-webpack-plugin');
 const UglifyJSPlugin      = require('uglifyjs-webpack-plugin');
 
 function resolve(dir) {
@@ -15,10 +14,10 @@ function resolve(dir) {
 module.exports = (env) => {
 	return {
 		entry : {
-			index: './src/index.js'
+			index: './src/sampleComponents.js'
 		},
 		output : {
-			filename : 'hello-components.js',
+			filename : 'sampleComponents.js',
 			path : path.resolve(__dirname, 'dist')
 		},
 		resolve : {
@@ -79,6 +78,9 @@ module.exports = (env) => {
 			]
 		},
 		plugins : [
+		  new CopyWebpackPlugin([
+		    path.resolve(__dirname, 'src/sampleComponentsAngular.js')
+      ]),
 			// new UglifyJSPlugin({
 			// 	sourceMap : true
 			// }),

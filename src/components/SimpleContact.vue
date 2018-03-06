@@ -25,17 +25,6 @@
       return {
         contact: JSON.parse(JSON.stringify(this.initialContact))
       };
-    },
-
-    methods: {
-      increment: function () {
-        this.counter += 1;
-        this.$emit('update', this.counter);
-      },
-      decrement: function () {
-        this.counter -= 1;
-        this.$emit('update', this.counter);
-      }
     }
   };
 </script>

@@ -7,22 +7,38 @@
 
     <title>Vue.js Components Wrapper Example</title>
 		<script src="https://unpkg.com/vue"></script>
-		<script src="dist/hello-components.js"></script>
+		<script src="dist/sampleComponents.js"></script>
 	</head>
 
 	<body>
 		<div id="app">
 			<h1 class="title">Vue.js Components Wrapper Example</h1>
+
 			<hello-component name="World"></hello-component>
+
 			<hello2-component name="Everyone"></hello2-component>
-      <simple-counter v-bind:initial-value="0"></simple-counter>
+
+      <simple-counter
+        v-bind:initial="initialValue"
+        v-on:count-updated="onCountUpdated">
+      </simple-counter>
+
       <br>
-      <simple-contact v-bind:initial-contact="{name: 'chris', phone: '555-1212'}"></simple-contact>
+
+      <simple-contact v-bind:initial-contact="{name: 'Mike', phone: '555-1212'}"></simple-contact>
 		</div>
 
 		<script>
 		new Vue({
-			el : '#app'
+			el : '#app',
+      data: {
+        initialValue: 10
+      },
+      methods: {
+        onCountUpdated: function(newCount) {
+          console.log("onCountUpdated count=" + newCount);
+        }
+      }
 		});
 		</script>
 
