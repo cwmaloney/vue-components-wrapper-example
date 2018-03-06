@@ -1,24 +1,58 @@
 # Vue.js Components Wrapper Example
 
-This project is a simple example of creating packaging Vue.js components for use in any HTML.
+This project is a simple example of creating packaging Vue.js components
+for use in any HTML.
 
 ## Installation
-Install the dependencies
+To install the dependencies, run:
 
     $ npm install
 
+## Sample Components
+
+The components are defined in src/components:
+* HelloComponent and Hello2Compoenet are simple message components.
+* SimpleCounter demonstrates two-way binding of a scalar.
+* SimpleContact demonstrates two-way binding of a object.
+
+The file sampleComponents.js provides the Webpack "entry point" for the component
+bundling process. This file imports the component defintions and includes the
+code to register the components with the Vue.js runtime.
+
 ## Build Component Package
 
-Create the component packages.
+To create the component packages, run:
 
     $ npm run-script build
 
-This will create a JavaScript file in the dist folder that wraps the component
-in a Vue.js componenet.  When loaded by the browser, the JavaScript file will
-register the Vue.js componenets
+The results of the build process is two files and puts these in the dist folder.
 
-## Open the demo page
+The file sampleComponents.js wraps the components in a single JavaScript file. 
+This JavaScript file will load and register the Vue.js components when loaded
+in an HTML page
 
-The index.html page uses the two sample components by referenceing the JavaScript file that wraps the Vue.js components created by the build step and stored in the dist folder.  You can open the page in a browswer after you have completed the build step.
+The file sampleComponentsAnguler.js provides AngularJS (Angular 1) wrappers for
+the components in a module named "componentWrappers".
+This file wraps each Vue.js component as an AngularJs directive.
+The directives allow the components to be used as "elements" within any AngularJs
+application that includes the modules as a dependency. 
 
+## Using "packaged" Vue.js Components in an HTML page
 
+The index.html page uses the  sample components by importing Vue.js and
+sampleComponents.js.
+You can open the file in a browser.
+The application reports events to the console log.
+
+Notices that page contains multiple instances of some components bound to separate
+data.
+
+## Using Vue.js Components in AngularJs Applications
+
+The angular.html page uses the sample components by importing Vue.js, Angular,
+and sampleCompoenntsAngular.js
+You can open the file in a browser.
+The application reports events to the console log.
+
+Notices that page contains multiple instances of some components bound to separate
+data.
