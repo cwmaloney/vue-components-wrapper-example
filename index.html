@@ -12,15 +12,22 @@
 
 	<body>
 		<div id="app">
-			<h1 class="title">Vue.js Components Wrapper Example</h1>
+			<h1 class="title">Vue.js Components in HTML page</h1>
 
 			<hello-component name="World"></hello-component>
 
 			<hello2-component name="Everyone"></hello2-component>
 
-      <simple-counter
-        v-bind:initial-count="initialCount"
-        v-on:count-updated="onCountUpdated">
+      <simple-counter id="simple-counter1"
+        v-bind:initial-count="initialCount1"
+        v-on:count-updated="onCountUpdated1">
+      </simple-counter>
+
+      <br>
+
+      <simple-counter id="simple-counter2"
+        v-bind:initial-count="initialCount2"
+        v-on:count-updated="onCountUpdated2">
       </simple-counter>
 
       <br>
@@ -36,12 +43,16 @@
 		new Vue({
 			el : '#app',
       data: {
-        initialCount: 10,
+        initialCount1: 1,
+        initialCount2: 2,
         initialContact: { name: 'Mike', phone: '555-1212' }
       },
       methods: {
-        onCountUpdated: function(newCount) {
-          console.log("onCountUpdated count=" + newCount);
+        onCountUpdated1: function(newCount) {
+          console.log("onCountUpdated1 count=" + newCount);
+        },
+        onCountUpdated2: function(newCount) {
+          console.log("onCountUpdated2 count=" + newCount);
         },
         onContactUpdated: function(newContact) {
           console.log("onContactUpdated contact=" + JSON.stringify(newContact));

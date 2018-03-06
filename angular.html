@@ -14,26 +14,36 @@
 </head>
 
 <body>
+  <h1 class="title">AngularJS and Vue.js</h1>
 
-  <div id="app">
-    <h1 class="title">Angular App Using Vue.js Component</h1>
+  <!-- This demonstrates using Vue.js in ths same page as Angular.js -->
+  <div id="vue-app">
+    <h2>Vue.js Only Section</h2>
     <hello-component name="World"></hello-component>
     <hello2-component name="Everyone"></hello2-component>
   </div>
 
-  <div id="angularApp">
-    <simple-counter-wrapper initial-count="10000"></simple-counter-wrapper>
+  <!-- Angular "app" using Angular directive elements that wrap Vue.js coomponents -->
+  <div id="angular-app">
+    <h2>AngularJS App Section</h2>
+    <h3>AngularJS elements wrapping Vue.js Components</h3>
+    <simple-counter-wrapper initial-count="10"></simple-counter-wrapper>
+    <br>
+    <simple-counter-wrapper initial-count="20"></simple-counter-wrapper>
+    <br>
+    <simple-contact-wrapper initial-contact="{ name: 'Mike', phone: '555-1212' }"></simple-contact-wrapper>
   </div>
 
   <script>
 
+    // Start Vue for the "only" Vue part
+    new Vue({
+      el : '#vue-app'
+    });
+
     // Start our application with the module
     angular.bootstrap(document.body, ['componentWrappers']);
 
-    // Start Vue for the "only" Vue part
-    new Vue({
-      el : '#app'
-    });
   </script>
 
 </body>
