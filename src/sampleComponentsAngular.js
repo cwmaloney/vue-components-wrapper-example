@@ -8,25 +8,21 @@ angular.module('componentWrappers', [])
       restrict: 'E', // match element only
 
       scope: {
-        count: '=initialw'
+        count: '=initialCount'
       },
 
       template: '<div>\n' +
-                '  Simple Counter wrapper\n' +
-                '  <br>\n' +
                 '  <div ng-non-bindable>' +
                 '    <div id="wrapper">' +
                 '      <simple-counter' +
-                '        v-bind:initial="initialValueFromWrapper"' +
+                '        v-bind:initial-count="initialValueFromWrapper"' +
                 '        v-on:count-updated="onCountUpdated"' +
                 '        >' +
                 '      </simple-counter>' +
                 '    </div>' +
                 '  </div>' +
-                '  <br>\n' +
                 '  Angular wrapper $scope value: {{count}}\n' +
                 '</div>',
-
 
       link: function (scope, $element) {
         // Create our root instance

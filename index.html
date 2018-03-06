@@ -19,7 +19,7 @@
 			<hello2-component name="Everyone"></hello2-component>
 
       <simple-counter
-        v-bind:initial="initialValue"
+        v-bind:initial-count="initialCount"
         v-on:count-updated="onCountUpdated">
       </simple-counter>
 
@@ -32,7 +32,7 @@
 		new Vue({
 			el : '#app',
       data: {
-        initialValue: 10
+        initialCount: 10
       },
       methods: {
         onCountUpdated: function(newCount) {

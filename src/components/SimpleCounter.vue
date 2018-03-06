@@ -11,12 +11,12 @@
     name: 'simple-counter',
 
     props: {
-      initial: {type: Number, required: true}
+      initialCount: {type: Number, required: true}
     },
 
     data() {
       return {
-        counterValue: this.initial
+        counterValue: this.initialCount
       };
     },
 
