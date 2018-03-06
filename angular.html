@@ -7,9 +7,8 @@
   <title>Angular App Using Vue.js Component</title>
 
   <script src="https://unpkg.com/vue"></script>
-  <script data-require="angularjs@1.5.8" data-semver="1.5.8"
-          src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js"></script>
   <script src="dist/sampleComponents.js"></script>
+  <script src="http://code.angularjs.org/snapshot/angular.js"></script>
   <script src="dist/sampleComponentsAngular.js"></script>
 </head>
 
@@ -25,14 +24,18 @@
   </div>
 
   <!-- Angular "app" using Angular directive elements that wrap Vue.js coomponents -->
-  <div id="angular-app">
-    <h2>AngularJS App Section</h2>
-    <h3>AngularJS elements wrapping Vue.js Components</h3>
-    <simple-counter-wrapper initial-count="10"></simple-counter-wrapper>
-    <br>
-    <simple-counter-wrapper initial-count="20"></simple-counter-wrapper>
-    <br>
-    <simple-contact-wrapper initial-contact="{ name: 'Mike', phone: '555-1212' }"></simple-contact-wrapper>
+  <div ng-app="MainModule">
+    <div ng-controller="Controller">
+      <h2>AngularJS App Section</h2>
+      <p>AngularJS elements wrapping Vue.js Components</p>
+      <simple-counter-wrapper initial-count="count1"></simple-counter-wrapper>
+      <br>
+      <simple-counter-wrapper initial-count="count2"></simple-counter-wrapper>
+      <br>
+      <simple-contact-wrapper initial-contact="mike"></simple-contact-wrapper>
+      <br>
+      <simple-contact-wrapper initial-contact="mark"></simple-contact-wrapper>
+    </div>
   </div>
 
   <script>
@@ -42,8 +45,18 @@
       el : '#vue-app'
     });
 
-    // Start our application with the module
-    angular.bootstrap(document.body, ['componentWrappers']);
+    // best practice would be to put this in another file
+    angular.module('MainModule', ['componentWrappers'])
+      .controller('Controller', ['$scope', function ($scope) {
+        $scope.count1 = 10;
+        $scope.count2 = 20;
+        $scope.mike = {name: 'Mike', phone: '555-0001'};
+        $scope.mark = {name: 'Mark', phone: '555-0002'};
+      }]);
+
+    // Instead of using ng-app above, it is possible to bootstrap Angular
+    // "manually" using this:
+    // angular.bootstrap(document.body, ['MainModule']);
 
   </script>
 
