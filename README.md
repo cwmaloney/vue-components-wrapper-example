@@ -33,7 +33,7 @@ in an HTML page
 
 The file sampleComponentsAnguler.js provides AngularJS (Angular 1) wrappers for
 the components in a module named "componentWrappers".
-This file wraps each Vue.js component as an AngularJs directive.
+This file wraps each Vue.js component as an AngularJs "element" directive.
 The directives allow the components to be used as "elements" within any AngularJs
 application that includes the modules as a dependency. 
 
@@ -44,15 +44,15 @@ sampleComponents.js.
 You can open the file in a browser.
 The application reports events to the console log.
 
-Notices that page contains multiple instances of some components bound to separate
+Notices that the page contains multiple instances of some components bound to separate
 data.
 
 ## Using Vue.js Components in AngularJs Applications
 
 The angular.html page uses the sample components by importing Vue.js, Angular,
-and sampleCompoenntsAngular.js
+sampleComponents.js, and sampleCompoenntsAngular.js
 You can open the file in a browser.
 The application reports events to the console log.
 
-Notices that page contains multiple instances of some components bound to separate
+Notices that the page contains multiple instances of some components bound to separate
 data.
