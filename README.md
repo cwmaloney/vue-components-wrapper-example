@@ -1,7 +1,7 @@
 # Vue.js Components Wrapper Example
 
 This project is a simple example of creating packaging Vue.js components
-for use in any HTML.
+for use in any HTML or AngularJs application.
 
 ## Installation
 To install the dependencies, run:
@@ -19,7 +19,7 @@ The file sampleComponents.js provides the Webpack "entry point" for the componen
 bundling process. This file imports the component defintions and includes the
 code to register the components with the Vue.js runtime.
 
-## Build Component Package
+## Building the Component Package
 
 To create the component packages, run:
 
@@ -44,8 +44,8 @@ sampleComponents.js.
 You can open the file in a browser.
 The application reports events to the console log.
 
-Notices that the page contains multiple instances of some components bound to separate
-data.
+Notices that the page contains multiple instances of some components bound to
+separate data.
 
 ## Using Vue.js Components in AngularJs Applications
 
@@ -54,5 +54,5 @@ sampleComponents.js, and sampleCompoenntsAngular.js
 You can open the file in a browser.
 The application reports events to the console log.
 
-Notices that the page contains multiple instances of some components bound to separate
-data.
+Notices that the page contains multiple instances of some components bound to
+separate data.
